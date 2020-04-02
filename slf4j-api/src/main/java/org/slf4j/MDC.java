@@ -65,6 +65,8 @@ public class MDC {
 
     static final String NULL_MDCA_URL = "http://www.slf4j.org/codes.html#null_MDCA";
     static final String NO_STATIC_MDC_BINDER_URL = "http://www.slf4j.org/codes.html#no_static_mdc_binder";
+
+    //MDC委托MDCAdapter,而MDCAdapter由具体日志框架实现
     static MDCAdapter mdcAdapter;
 
     /**
@@ -85,14 +87,17 @@ public class MDC {
     private MDC() {
     }
 
+    /**
+     * 使用slf4j日志门面实际绑定日志框架中提供的MDCAdapter
+     */
     static {
         SLF4JServiceProvider provider = LoggerFactory.getProvider();
         if (provider != null) {
-            mdcAdapter = provider.getMDCAdapter();
+            mdcAdapter = provider.getMDCAdapter(); //使用日志框架实现的MDCAdapter
         } else {
             Util.report("Failed to find provider.");
             Util.report("Defaulting to no-operation MDCAdapter implementation.");
-            mdcAdapter = new NOPMDCAdapter();
+            mdcAdapter = new NOPMDCAdapter(); /* 空对象模式 */
         }
     }
 

@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
  * @author Ceki G&uml;lc&uml;
  * @since 1.8
  */
+//本接口基于ServiceLoader范式,替代了过去的(v1.0-1.7)静态绑定机制.
 public interface SLF4JServiceProvider {
 
     
@@ -48,5 +49,6 @@ public interface SLF4JServiceProvider {
      * {@link LoggerFactory} class and from nowhere else. 
      * 
      */
+    //日志服务提供者初始化
     public void initialize();
 }

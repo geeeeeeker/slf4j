@@ -33,6 +33,7 @@ import java.util.Map;
  * @author Ceki G&uuml;lc&uuml;
  * @since 1.4.1
  */
+//
 public interface MDCAdapter {
 
     /**

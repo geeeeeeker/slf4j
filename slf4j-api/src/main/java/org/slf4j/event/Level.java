@@ -15,7 +15,10 @@ import static org.slf4j.event.EventConstants.WARN_INT;
  */
 public enum Level {
 
-	ERROR(ERROR_INT, "ERROR"), WARN(WARN_INT, "WARN"), INFO(INFO_INT, "INFO"), DEBUG(DEBUG_INT, "DEBUG"),
+	ERROR(ERROR_INT, "ERROR"),
+	WARN(WARN_INT, "WARN"),
+	INFO(INFO_INT, "INFO"),
+	DEBUG(DEBUG_INT, "DEBUG"),
 	TRACE(TRACE_INT, "TRACE");
 
 	private int levelInt;

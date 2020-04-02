@@ -35,6 +35,7 @@ package org.slf4j;
  * 
  * @author Ceki G&uuml;lc&uuml;
  */
+//根据名称创建Logger的工厂
 public interface ILoggerFactory {
 
     /**

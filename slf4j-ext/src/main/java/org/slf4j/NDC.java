@@ -24,8 +24,7 @@
  */
 package org.slf4j;
 
-import org.slf4j.MDC;
-
+//Nest Diagnostic Context, 利用MDC实现功能
 public class NDC {
     public final static String PREFIX = "NDC";
 
